@@ -14,7 +14,7 @@ public class SubjectRepository {
 
   private final DSLContext dslContext;
 
-  public int insertSubject(Subject subject) {
+  public int insert(Subject subject) {
     return dslContext
         .insertInto(
             Tables.SUBJECT,
@@ -32,7 +32,8 @@ public class SubjectRepository {
         .execute();
   }
 
-  public List<Subject> getAllSubjects() {
+  public List<Subject> getAll() {
     return dslContext.selectFrom(Tables.SUBJECT).fetchInto(Subject.class);
   }
+
 }

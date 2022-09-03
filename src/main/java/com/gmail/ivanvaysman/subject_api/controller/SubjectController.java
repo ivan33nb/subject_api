@@ -20,12 +20,12 @@ public class SubjectController {
   private final SubjectServiceImpl service;
 
   @GetMapping("/all")
-  public ResponseEntity<List<Subject>> getAllSubject(){
-    return ResponseEntity.ok(service.getAllSubject());
+  public ResponseEntity<List<Subject>> getAll(){
+    return ResponseEntity.ok(service.getAll());
   }
 
   @PostMapping("/add")
-  public ResponseEntity<Integer> insertSubject(@RequestBody SubjectInsertReq requestBody){
-    return ResponseEntity.ok(service.insertSubject(requestBody));
+  public ResponseEntity<Integer> insert(@RequestBody SubjectInsertReq requestBody){
+    return ResponseEntity.ok(service.insert(requestBody));
   }
 }

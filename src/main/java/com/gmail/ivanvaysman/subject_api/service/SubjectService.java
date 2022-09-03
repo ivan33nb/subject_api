@@ -5,7 +5,7 @@ import com.tej.JooQDemo.jooq.sample.model.tables.pojos.Subject;
 import java.util.List;
 
 public interface SubjectService {
-  int insertSubject(SubjectInsertReq requestBody);
+  int insert(SubjectInsertReq requestBody);
 
-  List<Subject> getAllSubject();
+  List<Subject> getAll();
 }

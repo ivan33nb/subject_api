@@ -16,17 +16,17 @@ public class SubjectServiceImpl implements SubjectService {
   private final SubjectRepository repository;
 
   @Override
-  public int insertSubject(SubjectInsertReq requestBody) {
+  public int insert(SubjectInsertReq requestBody) {
     Subject subject = new Subject();
     subject.setName(requestBody.getName());
     subject.setAmount(requestBody.getAmount());
     subject.setComment(requestBody.getComment());
     subject.setCreateDate(LocalDateTime.now());
-    return repository.insertSubject(subject);
+    return repository.insert(subject);
   }
 
   @Override
-  public List<Subject> getAllSubject() {
-    return repository.getAllSubjects();
+  public List<Subject> getAll() {
+    return repository.getAll();
   }
 }
