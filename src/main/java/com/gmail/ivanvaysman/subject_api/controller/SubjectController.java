@@ -35,4 +35,9 @@ public class SubjectController {
   public ResponseEntity<Integer> update(@RequestBody SubjectUpdateReq requestBody){
     return ResponseEntity.ok(service.update(requestBody));
   }
+
+  @GetMapping("/getJson")
+  public ResponseEntity<String> getJson(){
+    return ResponseEntity.ok(service.getAll().toString());
+  }
 }
