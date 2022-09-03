@@ -7,6 +7,7 @@ import com.gmail.ivanvaysman.subject_api.service.impl.SubjectServiceImpl;
 import com.tej.JooQDemo.jooq.sample.model.tables.pojos.Subject;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,8 +37,8 @@ public class SubjectController {
     return ResponseEntity.ok(service.update(requestBody));
   }
 
-  @GetMapping("/getJson")
-  public ResponseEntity<String> getJson(){
-    return ResponseEntity.ok(service.getAll().toString());
+  @GetMapping(value = "/json", produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<List<Subject>> getJson(){
+    return ResponseEntity.ok(service.getAll());
   }
 }
