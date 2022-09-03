@@ -1,6 +1,8 @@
 package com.gmail.ivanvaysman.subject_api.controller;
 
 import com.gmail.ivanvaysman.subject_api.model.SubjectInsertReq;
+import com.gmail.ivanvaysman.subject_api.model.SubjectUpdateReq;
+import com.gmail.ivanvaysman.subject_api.service.SubjectService;
 import com.gmail.ivanvaysman.subject_api.service.impl.SubjectServiceImpl;
 import com.tej.JooQDemo.jooq.sample.model.tables.pojos.Subject;
 import java.util.List;
@@ -17,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SubjectController {
 
-  private final SubjectServiceImpl service;
+  private final SubjectService service;
 
   @GetMapping("/all")
   public ResponseEntity<List<Subject>> getAll(){
@@ -27,5 +29,10 @@ public class SubjectController {
   @PostMapping("/add")
   public ResponseEntity<Integer> insert(@RequestBody SubjectInsertReq requestBody){
     return ResponseEntity.ok(service.insert(requestBody));
+  }
+
+  @PostMapping("/update")
+  public ResponseEntity<Integer> update(@RequestBody SubjectUpdateReq requestBody){
+    return ResponseEntity.ok(service.update(requestBody));
   }
 }
