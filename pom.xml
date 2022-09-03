@@ -131,7 +131,7 @@
                                 </generate>
                                 <target>
                                     <packageName>
-                                        com.tej.JooQDemo.jooq.sample.model
+                                        com.gmail.ivanvaysman.jooq.model
                                     </packageName>
                                     <directory>
                                         target/generated-sources/jooq
