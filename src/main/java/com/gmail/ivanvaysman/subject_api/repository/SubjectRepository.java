@@ -18,13 +18,11 @@ public class SubjectRepository {
     return dslContext
         .insertInto(
             Tables.SUBJECT,
-            Tables.SUBJECT.ID,
             Tables.SUBJECT.NAME,
             Tables.SUBJECT.COMMENT,
             Tables.SUBJECT.AMOUNT,
             Tables.SUBJECT.CREATE_DATE)
         .values(
-            subject.getId(),
             subject.getName(),
             subject.getComment(),
             subject.getAmount(),
@@ -35,5 +33,4 @@ public class SubjectRepository {
   public List<Subject> getAll() {
     return dslContext.selectFrom(Tables.SUBJECT).fetchInto(Subject.class);
   }
-
 }
