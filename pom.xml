@@ -121,12 +121,12 @@
                             <!--Insert your DB configuration-->
                             <jdbc>
                                 <driver>com.mysql.cj.jdbc.Driver</driver>
-<!--                                <url>jdbc:mysql://database-1.cn7he75ncymo.eu-north-1.rds.amazonaws.com:3306/test_schema</url>
+                               <url>jdbc:mysql://database-1.cn7he75ncymo.eu-north-1.rds.amazonaws.com:3306/test_schema</url>
                                 <user>vaysmanDB</user>
-                                <password>aws_db_vaysman1!</password>-->
-                                <url>${env.DB_URL}</url>
-                                <user>${env.DB_USERNAME}</user>
-                                <password>${env.DB_PASSWORD}</password>
+                                <password>aws_db_vaysman1!</password>
+<!--                                <url>${env.DB_URL}</url>-->
+<!--                                <user>${env.DB_USERNAME}</user>-->
+<!--                                <password>${env.DB_PASSWORD}</password>-->
                             </jdbc>
                             <generator>
                                 <database>
