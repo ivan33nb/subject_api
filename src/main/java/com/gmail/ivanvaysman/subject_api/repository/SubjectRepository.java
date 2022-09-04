@@ -1,7 +1,7 @@
 package com.gmail.ivanvaysman.subject_api.repository;
 
-import com.tej.JooQDemo.jooq.sample.model.Tables;
-import com.tej.JooQDemo.jooq.sample.model.tables.pojos.Subject;
+import com.gmail.ivanvaysman.jooq.model.Tables;
+import com.gmail.ivanvaysman.jooq.model.tables.pojos.Subject;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.jooq.DSLContext;
@@ -39,5 +39,20 @@ public class SubjectRepository {
         .set(Tables.SUBJECT.UPDATE_DATE, subject.getUpdateDate())
         .where(Tables.SUBJECT.ID.eq(subject.getId()))
         .execute();
+  }
+
+  public Subject findById(Integer id) {
+    List<Subject> subjects =
+        dslContext
+            .selectFrom(Tables.SUBJECT)
+            .where(Tables.SUBJECT.ID.eq(id))
+            .fetchInto(Subject.class);
+
+    return subjects.isEmpty() ? null : subjects.get(0);
+  }
+
+  public boolean isExist(Integer id) {
+    return dslContext.fetchExists(
+        dslContext.selectFrom(Tables.SUBJECT).where(Tables.SUBJECT.ID.eq(id)));
   }
 }
