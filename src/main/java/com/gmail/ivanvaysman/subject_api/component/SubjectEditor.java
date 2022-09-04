@@ -29,8 +29,7 @@ public class SubjectEditor extends VerticalLayout implements KeyNotifier {
   private final TextField amount = new TextField("amount");
   /* Action buttons */
   private final Button save = new Button("Save");
-  private final Button edit = new Button("Edit");
-  private final HorizontalLayout buttons = new HorizontalLayout(save, edit);
+  private final HorizontalLayout buttons = new HorizontalLayout(save);
 
   private final Binder<SubjectDTO> binder = new Binder<>(SubjectDTO.class);
 
