@@ -11,6 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,12 +28,12 @@ public class SubjectController {
     return ResponseEntity.ok(service.getAll());
   }
 
-  @PostMapping("/add")
+  @PostMapping
   public ResponseEntity<Integer> insert(@RequestBody SubjectInsertReq requestBody){
     return ResponseEntity.ok(service.insert(requestBody));
   }
 
-  @PostMapping("/update")
+  @PutMapping
   public ResponseEntity<Integer> update(@RequestBody SubjectUpdateReq requestBody){
     return ResponseEntity.ok(service.update(requestBody));
   }
