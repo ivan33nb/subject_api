@@ -18,9 +18,9 @@ IDEA -> File -> New -> project from version control -> `https://github.com/ivan3
 2) `DB_TEST_USERNAME` - юзернэйм
 3) `DB_TEST_PASSWORD` - пароль
 
-**_Перед запуском приложения, следует накатить скрипты liquibase. Для этого выполните mvn liquibase:update.
+**Перед запуском приложения, следует накатить скрипты liquibase. Для этого выполните** `mvn liquibase:update`.
 
-После того, как БД заполнится, можно будет начинать генерацию JOOQ сущностей -> mvn clean compile._**
+**После того, как БД заполнится, можно будет начинать генерацию JOOQ сущностей ->** `mvn clean compile`
 
 
 * [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
