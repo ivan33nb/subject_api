@@ -153,6 +153,17 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-maven-plugin</artifactId>
+                <version>3.9.0</version>
+                <configuration>
+                    <changeLogFile>src/main/resources/db/changelog/changelog.xml</changeLogFile>
+                    <url>${env.DB_URL}</url>
+                    <username>${env.DB_USERNAME}</username>
+                    <password>${env.DB_PASSWORD}</password>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
