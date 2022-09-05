@@ -121,9 +121,9 @@
                             <!--Insert your DB configuration-->
                             <jdbc>
                                 <driver>com.mysql.cj.jdbc.Driver</driver>
-                                <url>${env.DB_URL}</url>
-                                <user>${env.DB_USERNAME}</user>
-                                <password>${env.DB_PASSWORD}</password>
+                                <url>${env.DB_TEST_URL}</url>
+                                <user>${env.DB_TEST_USERNAME}</user>
+                                <password>${env.DB_TEST_PASSWORD}</password>
                             </jdbc>
                             <generator>
                                 <database>
@@ -159,9 +159,9 @@
                 <version>3.9.0</version>
                 <configuration>
                     <changeLogFile>src/main/resources/db/changelog/changelog.xml</changeLogFile>
-                    <url>${env.DB_URL}</url>
-                    <username>${env.DB_USERNAME}</username>
-                    <password>${env.DB_PASSWORD}</password>
+                    <url>${env.DB_TEST_URL}</url>
+                    <username>${env.DB_TEST_USERNAME}</username>
+                    <password>${env.DB_TEST_PASSWORD}</password>
                 </configuration>
             </plugin>
         </plugins>
